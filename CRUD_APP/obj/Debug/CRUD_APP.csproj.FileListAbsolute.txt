@@ -1,0 +1,15 @@
+A:\user\Ingenieurs\ENIT_Info_2020-2021_2eme\2020-2021-S2\C#.NET\CRUD_APP\CRUD_APP\bin\Debug\CRUD_APP.exe.config
+A:\user\Ingenieurs\ENIT_Info_2020-2021_2eme\2020-2021-S2\C#.NET\CRUD_APP\CRUD_APP\bin\Debug\CRUD_APP.exe
+A:\user\Ingenieurs\ENIT_Info_2020-2021_2eme\2020-2021-S2\C#.NET\CRUD_APP\CRUD_APP\bin\Debug\CRUD_APP.pdb
+A:\user\Ingenieurs\ENIT_Info_2020-2021_2eme\2020-2021-S2\C#.NET\CRUD_APP\CRUD_APP\obj\Debug\CRUD_APP.csprojAssemblyReference.cache
+A:\user\Ingenieurs\ENIT_Info_2020-2021_2eme\2020-2021-S2\C#.NET\CRUD_APP\CRUD_APP\obj\Debug\CRUD_APP.Properties.Resources.resources
+A:\user\Ingenieurs\ENIT_Info_2020-2021_2eme\2020-2021-S2\C#.NET\CRUD_APP\CRUD_APP\obj\Debug\CRUD_APP.csproj.GenerateResource.cache
+A:\user\Ingenieurs\ENIT_Info_2020-2021_2eme\2020-2021-S2\C#.NET\CRUD_APP\CRUD_APP\obj\Debug\CRUD_APP.csproj.CoreCompileInputs.cache
+A:\user\Ingenieurs\ENIT_Info_2020-2021_2eme\2020-2021-S2\C#.NET\CRUD_APP\CRUD_APP\obj\Debug\CRUD_APP.exe
+A:\user\Ingenieurs\ENIT_Info_2020-2021_2eme\2020-2021-S2\C#.NET\CRUD_APP\CRUD_APP\obj\Debug\CRUD_APP.pdb
+A:\user\Ingenieurs\ENIT_Info_2020-2021_2eme\2020-2021-S2\C#.NET\CRUD_APP\CRUD_APP\obj\Debug\CRUD_APP.Dashboard.resources
+A:\user\Ingenieurs\ENIT_Info_2020-2021_2eme\2020-2021-S2\C#.NET\CRUD_APP\CRUD_APP\obj\Debug\CRUD_APP.loginForm.resources
+A:\user\Ingenieurs\ENIT_Info_2020-2021_2eme\2020-2021-S2\C#.NET\CRUD_APP\CRUD_APP\bin\Debug\BouncyCastle.Crypto.dll
+A:\user\Ingenieurs\ENIT_Info_2020-2021_2eme\2020-2021-S2\C#.NET\CRUD_APP\CRUD_APP\bin\Debug\itextsharp.dll
+A:\user\Ingenieurs\ENIT_Info_2020-2021_2eme\2020-2021-S2\C#.NET\CRUD_APP\CRUD_APP\bin\Debug\itextsharp.xml
+A:\user\Ingenieurs\ENIT_Info_2020-2021_2eme\2020-2021-S2\C#.NET\CRUD_APP\CRUD_APP\obj\Debug\CRUD_APP.csproj.CopyComplete
