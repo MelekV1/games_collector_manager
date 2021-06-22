@@ -44,6 +44,7 @@ namespace CRUD_APP
             {
                 //Message d'erreur
                 MessageBox.Show("Please check your input , invalide credentials!");
+                con.Close();
             }
         }
     }

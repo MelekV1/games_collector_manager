@@ -37,10 +37,13 @@ namespace CRUD_APP
                 DataTable dt = new DataTable();
                 da.Fill(dt);
                 DataGridViewGames.DataSource = dt;
-                con.Close();
             }catch(Exception ex)
             {
                 MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                con.Close();
             }
         }
 
@@ -55,7 +58,6 @@ namespace CRUD_APP
 
         private void Insert_Click(object sender, EventArgs e)
         {
-            con.Open();
             try
             {
                 if (GameTitle.Text != "" && 
@@ -64,6 +66,7 @@ namespace CRUD_APP
                     Genre.Text!=""
                     )
                 {
+                    con.Open();
                     SqlCommand cmd = new SqlCommand($"INSERT INTO Game (title,developers,price,genre,release) VALUES (" +
                         $"  '{GameTitle.Text}'," +
                         $"  '{Developers.Text}'," +
@@ -73,7 +76,6 @@ namespace CRUD_APP
                         con);
 
                     cmd.ExecuteNonQuery();
-                    con.Close();
                     MessageBox.Show("Record Inserted Successfully !");
                 }
                 else
@@ -87,6 +89,7 @@ namespace CRUD_APP
             }
             finally
             {
+                con.Close();
                 Reset();
                 DisplayData();
             }
@@ -118,9 +121,9 @@ namespace CRUD_APP
                         Genre.Text != ""
                         )
                     {
-                        SqlCommand cmd = new SqlCommand($"UPDATE Game SET price ={float.Parse(Price.Text)},developers='{Developers.Text}',genre='{Genre.Text}', release='{DateTime.Parse(ReleaseDatePicker.Text)}',title='{GameTitle.Text}' WHERE title='{GametitleTOupdate}'", con);
+                        SqlCommand cmd = new SqlCommand($"UPDATE Game SET price ={float.Parse(Price.Text)},developers='{Developers.Text}',genre='{Genre.Text}', " +
+                            $"release='{DateTime.Parse(ReleaseDatePicker.Text)}',title='{GameTitle.Text}' WHERE title='{GametitleTOupdate}'", con);
                         cmd.ExecuteNonQuery();
-                        con.Close();
                         MessageBox.Show("Record Updated Successfully ");
                     }
                     else
@@ -134,8 +137,10 @@ namespace CRUD_APP
                 }
                 finally
                 {
+                    con.Close();
                     Reset();
                     DisplayData();
+
                 }
             }
             else
@@ -146,16 +151,16 @@ namespace CRUD_APP
 
         private void Delete_Click(object sender, EventArgs e)
         {
-            Int32 selectedRowCount = DataGridViewGames.Rows.GetRowCount(DataGridViewElementStates.Selected);
+             Int32 selectedRowCount = DataGridViewGames.Rows.GetRowCount(DataGridViewElementStates.Selected);
             if (selectedRowCount > 0)
             {
                 string GametitleTOupdate = DataGridViewGames.SelectedRows[0].Cells[0].Value.ToString();
-                con.Open();
+                
                 try
                 {
+                     con.Open();
                      SqlCommand cmd = new SqlCommand($"DELETE Game WHERE title='{GametitleTOupdate}'", con);
                      cmd.ExecuteNonQuery();
-                     con.Close();
                      MessageBox.Show("Record is deleted Successfully ");
                 }
                 catch (Exception ex)
@@ -164,8 +169,10 @@ namespace CRUD_APP
                 }
                 finally
                 {
+                    con.Close();
                     Reset();
                     DisplayData();
+                    
                 }
             }
             else
@@ -183,48 +190,59 @@ namespace CRUD_APP
             {
                 if (nbconcat > 0)
                 {
-                    querybuilt += ",";
+                    querybuilt += " and ";
                 }
                 querybuilt += $"title='{GameTitle.Text}'";
+                nbconcat++;
             }
             if (Genre.Text != "")
             {
                 if (nbconcat > 0)
                 {
-                    querybuilt += ",";
+                    querybuilt += " and ";
                 }
                 querybuilt += $"genre='{Genre.Text}'";
+                nbconcat++;
+
             }
             if (Developers.Text != "")
             {
                 if (nbconcat > 0)
                 {
-                    querybuilt += ",";
+                    querybuilt += " and ";
                 }
                 querybuilt += $"developers='{Developers.Text}'";
+                nbconcat++;
+
             }
             if (Price.Text != "")
             {
                 if (nbconcat > 0)
                 {
-                    querybuilt += ",";
+                    querybuilt += " and ";
                 }
-                querybuilt += $"price='{float.Parse(Price.Text)}'";
+                querybuilt += $"price={float.Parse(Price.Text)}";
+                nbconcat++;
+
             }
 
             try
             {
                 con.Open();
+                Console.WriteLine(querybuilt);
                 SqlCommand cmd = new SqlCommand($"SELECT * FROM GAME WHERE {querybuilt}; ", con);
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
                 da.Fill(dt);
                 DataGridViewGames.DataSource = dt;
-                con.Close();
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                con.Close();
             }
         }
 
