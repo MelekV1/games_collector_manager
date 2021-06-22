@@ -38,7 +38,7 @@ namespace CRUD_APP
                 Dashboard dashboard = new Dashboard();
                 dashboard.ShowDialog();
                 //Fermer le login form ...?
-                this.Close();
+                //this.Close();
             }
             else
             {
